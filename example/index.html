@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/book-panel.min.css">
+  <title>Book Panel</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100vh;
+      margin: 0;
+    }
+
+    body {
+      height: 1200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      font-family: monospace;
+      color: #333;
+    }
+
+    .header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #E7E7E7;
+    }
+
+    .header h1 {
+      font-weight: normal;
+    }
+
+    main {
+      height: 100%;
+      color: #333;
+    }
+
+    .message {
+      font-size: 20px;
+      font-weight: normal;
+    }
+
+    .icon {
+      font-size: 100px;
+      color: #BBB;
+      transform: rotate(90deg);
+    }
+
+    article {
+      display: flex;
+      height: 100%;
+    }
+
+    article header {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 30px;
+      width: 100%;
+      background-color: #E7E7E7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: blueviolet;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <h1>Book Advertising Panel</h1>
+  </header>
+  <main>
+    <article>
+      <header>
+        <h1 class="message">Please Scroll Down to reveal the panel</h1>
+      </header>
+    </article>
+  </main>
+  <footer>
+    <div>
+      Coded by <a href="https://github.com/drozerah" target="_blank" rel="noopener noreferrer">Drozerah</a>
+    </div>
+  </footer>
+  <script src="/js/book-panel.min.js"></script>
+</body>
+
+</html>

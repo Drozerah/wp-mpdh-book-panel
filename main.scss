@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import './scss/utils';
+@import './scss/responsive';
+
+// colors
+$gray-darken-1: #212529;
+$gray:#333;
+$white: #fff;
+$gray-lighten-1: #b1b1b1;
+$gray-lighten-2: #e5e5e5;
+$gray-lighten-3: #f8f8f8;
+$green: #3e8e41;
+$green-lighten-1: #4CAF50;
+$slide-text-color: $gray-darken-1;
+$slide-background-color: $gray-lighten-3;
+$panel-background-color: rgba(255, 255, 255, 0.85);
+
+// variables
+$slide-width: 250px;
+$smallPanelHeight: 50px;
+
+.book__panel, .book__small__panel{
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.book__panel{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  bottom: 0px;
+  right: -350px;
+  z-index: 10000;
+  width: 290px;
+  background-color: $panel-background-color;
+  transition: transform .4s ease-in-out;
+  &--active{
+    transform: translatex(-360px);
+  }
+  &--close{
+    background-color: $white;
+    color: $gray-lighten-1;
+    border: 1px solid $gray-lighten-1;
+    border-radius: 100%;
+    position: absolute;
+    right: 0px;
+    top: -13px;
+    transition-property: color, border-color;
+    transition: 300ms ease;
+    cursor: pointer;
+    &:hover{
+      color: $gray;
+      border-color: $gray;
+    }
+  }
+  &__title{
+    font-weight: 500;
+    font-size: 27px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    width: inherit;
+  }
+  &__slider{
+    border-top: 1px solid $gray-lighten-2;
+    box-shadow: 0 1px 1px rgba(0,0,0,.12), 0 2px 2px rgba(0,0,0,.24);
+    width: $slide-width;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    div{
+      min-width: $slide-width;
+    }
+    &__img{
+      display: flex;
+      position: relative;
+      i{
+        position: absolute;
+        right: 2px;
+        bottom: 3px;
+        color: $gray-lighten-1;
+      }
+    }
+    &__text{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-around;
+      padding: 20px 0;
+      color: $slide-text-color;
+      background-color: $slide-background-color;
+      font-size: 14px;
+      ul{
+        list-style-type: none;
+        margin: 0 0 0 10px;
+        padding: 0;
+        padding-left: 15px;
+      }
+      div{
+        font-weight: 500;
+        text-align: center;
+      }
+      span{
+        font-weight: 500;
+      }
+    }
+    > div{
+      transition: transform .4s ease-in-out;
+    }
+    &:hover{
+      > div {
+        transform: translatex(-$slide-width);
+      }
+    }
+  }
+  &__action{
+    margin: 15px 0;
+    display: flex;
+    a{
+      text-transform: uppercase;
+      background-color: $green-lighten-1;
+      border: none;
+      color: $white;
+      padding: 10px 15px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      transition: background-color 300ms ease;
+      cursor: pointer;
+      &:hover{
+        background-color: $green;
+      }
+    }
+  }
+}
+
+.book__small__panel{
+  position: fixed;
+  height: $smallPanelHeight;
+  right:0;
+  bottom: -$smallPanelHeight;
+  left:0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: $white;
+  background-color: #343a40;
+  font-size: 20px;
+  padding: 5px;
+  transition: transform 300ms ease;
+  &__content{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+    a{
+      text-decoration: none;
+      color: inherit;
+      text-transform: uppercase;
+      background-color: $green-lighten-1;
+      font-size: 16px;
+      padding: 5px 15px;
+      margin-left: 20px;
+      transition: background-color 300ms ease;
+      cursor: pointer;
+      &:hover{
+        background-color: $green;
+      }
+    }
+  }
+  &--active{
+    transform: translateY(-$smallPanelHeight);
+  }
+  @media #{$small-and-down} {
+    // styles for small screens and down
+    $smallPanelHeight: 120px;
+    height: $smallPanelHeight;
+    bottom: -$smallPanelHeight;
+    &__content{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      div{
+        text-align: center;
+      }
+      a{
+        margin: 10px 0 0 0;
+      }
+    }
+    &--active{
+      transform: translateY(-$smallPanelHeight);
+    }
+  }
+}
+

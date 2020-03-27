@@ -1,0 +1,34 @@
+{
+  "name": "book-advertising-panel",
+  "version": "1.0.0",
+  "description": "Show/hide a book advertising panel",
+  "main": "app.js",
+  "bin": {
+    "book-panel": "prepare.js"
+  },
+  "scripts": {
+    "babel": "webpack",
+    "build": "node ./bin/build.js",
+    "build:example": "node ./bin/build-example.js",
+    "rebuild": "npm run build && npm run build:example"
+  },
+  "keywords": [],
+  "author": "Thomas G. aka Drozerah <drozerah@gmail.com> (https://github.com/Drozerah)",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.9.0",
+    "babel-loader": "^8.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "mkdirp": "^1.0.3",
+    "rimraf": "^3.0.2",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  }
+}
